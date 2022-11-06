@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/col_fafafa"
+    android:layout_height="match_parent">
+
+    <com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="游戏分类"
+            android:textColor="@color/col_333333"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold" />
+        <Space
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_16"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:id="@+id/rv_games"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_16"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="应用分类"
+            android:textColor="@color/col_333333"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold" />
+        <Space
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_16"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:id="@+id/rv_apps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,3 @@
+[workspace]
+members = ["epiphany-consumer","epiphany-provider", "epiphany-manager","epiphany_utils","epiphany_entity"]
+#[dependencies]

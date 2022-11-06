@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.github.easyview.EasyRelativeLayout
+        android:id="@+id/rl_search"
+        app:layout_constraintEnd_toStartOf="@+id/iv_down_list"
+        app:ev_radius="@dimen/dp_30"
+        app:ev_stroke_width="@dimen/dp_0_5"
+        app:ev_stroke_color="@color/col_999999"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_44"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_4"
+        android:background="@color/col_ffffff"
+        android:paddingStart="@dimen/dp_16"
+        android:paddingEnd="@dimen/dp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:tint="@color/col_cccccc"
+            android:padding="@dimen/dp_15"
+            android:src="@drawable/svg_icon_search"
+            android:layout_width="@dimen/dp_56"
+            android:layout_height="match_parent"/>
+    </com.github.easyview.EasyRelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_marginEnd="@dimen/dp_4"
+        app:layout_constraintBottom_toBottomOf="@+id/rl_search"
+        android:id="@+id/iv_down_list"
+        android:padding="@dimen/dp_12"
+        android:src="@drawable/svg_down_list"
+        app:layout_constraintTop_toTopOf="@id/rl_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="@dimen/dp_44"
+        android:layout_height="@dimen/dp_44"/>
+    <com.angcyo.tablayout.DslTabLayout
+        app:layout_constraintTop_toBottomOf="@+id/rl_search"
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:layout_gravity="center_vertical"
+        android:background="@color/col_ffffff"
+        app:tab_deselect_color="@color/col_999999"
+        app:tab_draw_indicator="true"
+        app:tab_indicator_drawable="@drawable/res_tab_indicator"
+        app:tab_indicator_enable_flow="true"
+        app:tab_indicator_height="3dp"
+        app:tab_indicator_y_offset="@dimen/dp_6"
+        app:tab_indicator_style="STYLE_BOTTOM"
+        app:tab_indicator_width="30dp"
+        app:tab_item_is_equ_width="false"
+        app:tab_select_color="@color/col_333333">
+
+        <TextView
+            android:layout_marginStart="@dimen/dp_16"
+            android:id="@+id/tv_recommned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_recommend"
+            android:textSize="@dimen/dp_14"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_marginStart="@dimen/dp_16"
+            android:id="@+id/tv_must"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_tab_must"
+            android:textSize="@dimen/dp_14"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_marginStart="@dimen/dp_16"
+            android:id="@+id/tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_classification"
+            android:textSize="@dimen/dp_14"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_marginStart="@dimen/dp_16"
+            android:id="@+id/tv_award"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_award"
+            android:textSize="@dimen/dp_14"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_marginStart="@dimen/dp_16"
+            android:id="@+id/tv_today_games"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_today_games"
+            android:textSize="@dimen/dp_14"
+            android:textStyle="bold" />
+    </com.angcyo.tablayout.DslTabLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/vp2"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

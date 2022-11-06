@@ -1,0 +1,214 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'epiphany-consumer'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=epiphany-consumer"
+                ],
+                "filter": {
+                    "name": "epiphany-consumer",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'epiphany-consumer'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=epiphany-consumer",
+                    "--package=epiphany-consumer"
+                ],
+                "filter": {
+                    "name": "epiphany-consumer",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'epiphany-consumer'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=epiphany-consumer",
+                    "--package=epiphany-consumer"
+                ],
+                "filter": {
+                    "name": "epiphany-consumer",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'epiphany_entity'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=epiphany_entity"
+                ],
+                "filter": {
+                    "name": "epiphany_entity",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'epiphany_utls'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=epiphany_utils"
+                ],
+                "filter": {
+                    "name": "epiphany_utls",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'epiphany-provider'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=epiphany-provider"
+                ],
+                "filter": {
+                    "name": "epiphany-provider",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'epiphany-provider'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=epiphany-provider",
+                    "--package=epiphany-provider"
+                ],
+                "filter": {
+                    "name": "epiphany-provider",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'epiphany-provider'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=epiphany-provider",
+                    "--package=epiphany-provider"
+                ],
+                "filter": {
+                    "name": "epiphany-provider",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'epiphany-manager'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=epiphany-manager"
+                ],
+                "filter": {
+                    "name": "epiphany-manager",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'epiphany-manager'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=epiphany-manager",
+                    "--package=epiphany-manager"
+                ],
+                "filter": {
+                    "name": "epiphany-manager",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'epiphany-manager'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=epiphany-manager",
+                    "--package=epiphany-manager"
+                ],
+                "filter": {
+                    "name": "epiphany-manager",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

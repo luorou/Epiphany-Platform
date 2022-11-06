@@ -1,0 +1,46 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/' }
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://plugins.gradle.org/m2/com/gradle' }
+        maven { url "https://maven.aliyun.com/nexus/content/repositories/releases" }
+        maven { url 'https://dl.google.com/dl/android/maven2/' }
+        maven { url 'https://developer.huawei.com/repo/' }
+        maven { url 'https://s3.amazonaws.com/fabric-artifacts/public' }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        mavenCentral()
+    }
+}
+rootProject.name = "EpiphanyAndroid"
+include ':app'
+include ':lib_resource'
+include ':lib_nethard'
+include ':mod_login'
+include ':lib_under'
+include ':mod_square'
+include ':mod_games'
+include ':mod_apps'
+include ':mod_ucenter'
+include ':mod_ranks'
+include ':lib_mvi'
+include ':lib_widget'
+include ':lib_middle'
+include ':mod_category'

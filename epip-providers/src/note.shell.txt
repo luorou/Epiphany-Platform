@@ -1,0 +1,2 @@
+1. npm install vite-plugin-style-import@1.4.1 -D
+2. npm install less@2.7.1 -D
