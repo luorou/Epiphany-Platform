@@ -19,6 +19,22 @@ export interface OrgnizeResult {
       business_license_id_file: string;
 }
 
-export const get_orgnize_list = () => {
-      return http.post<OrgnizeResult[]>(`/provider/organize/get_orgnize_list`, {});
+export interface CreateOrgnizeReq {
+      name: string;
+      business_license_id: string;
+      business_license_id_file: string;
+      address: string;
+      logo: string;
+      phone: string;
+      link_email: string;
+      link_qq: string;
+      organize_type: number;
+}
+
+export const get_organize_info = () => {
+      return http.post<OrgnizeResult>(`/provider/organize/get_organize_info`, {});
+};
+
+export const create_orgnize = (params: CreateOrgnizeReq) => {
+      return http.post<OrgnizeResult[]>(`/provider/organize/create_organize`, params);
 };

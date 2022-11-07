@@ -12,3 +12,8 @@ export const setMemberInfo = (info: string) => ({
 	type: types.SET_MEMBER_INFO,
 	info
 });
+//
+export const setOrgnizeInfo = (info: string) => ({
+	type: types.SET_ORGNIZE_INFO,
+	info
+});

@@ -1,7 +1,7 @@
 import { Space, Button, Layout } from "antd";
 const { Header } = Layout;
 import store from "@/store/index";
-import "./index.scss";
+import "@/components/topMenu/index.scss";
 import { useNavigate } from "react-router-dom";
 import { MemberInfo } from "@/models/index"
 
@@ -18,7 +18,7 @@ function RightMenu() {
   };
   //
   const openWorkbench = () => {
-    navigate("/orgnize_list");
+    navigate("/workbench");
     
   };
   let token: string|null = store.getState().global.token;

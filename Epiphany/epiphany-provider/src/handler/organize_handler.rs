@@ -13,7 +13,7 @@ use crate::{ middleware::auth_member};
 
 pub fn init_router() -> Router {
     Router::new()
-        .route("/get_orgnize_list", post(get_organize_info))
+        .route("/get_organize_info", post(get_organize_info))
         .route("/create_organize", post(create_organize))
         .layer(from_extractor::<auth_member::AuthMember>())
 }
@@ -26,7 +26,7 @@ async fn get_organize_info(headers: HeaderMap) -> impl IntoResponse {
 
     if hid_result.is_err() {
         let err_str = hid_result.err().unwrap();
-        let err_result: Result<Vec<tab_organize_info::Model>, Option<String>> = Result::Err(err_str);
+        let err_result: Result<Option<tab_organize_info::Model>, Option<String>> = Result::Err(err_str);
         return (StatusCode::OK, Json(WarpResponse::build(err_result)));
     }
 

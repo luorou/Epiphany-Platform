@@ -4,7 +4,7 @@ use epiphany_entity::tab_organize_info;
 pub struct OrganizeResp {
     pub organize_id: i64,
     pub member_id: i64,
-    pub name: Option<String>,
+    pub name: String,
     pub phone: Option<String>,
     pub link_email: Option<String>,
     pub address: Option<String>,

@@ -4,10 +4,15 @@ import bicyclesWindAnimation from "@/assets/lottie/lottie-bicycles-wind-turbines
 import { useLottie } from "lottie-react";
 import "@/views/login/index.scss";
 import { useState } from "react";
-import { setToken, setMemberInfo } from "@/store/modules/global/action";
+import {
+  setToken,
+  setMemberInfo,
+  setOrgnizeInfo,
+} from "@/store/modules/global/action";
 import { LoginResult, LoginReq } from "@/api/login/index";
 import { loginApi } from "@/api/login/index";
 import { get_member_info } from "@/api/member/index";
+import { get_organize_info } from "@/api/orgnize/index";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -35,6 +40,7 @@ function LoginView() {
       if (data) {
         dispath(setToken(data));
         getMemberInfo();
+        getOrgnizeInfo();
         message.success("登录成功！");
         navigate("/home");
       }
@@ -44,7 +50,7 @@ function LoginView() {
   };
 
   /**
-   * 
+   *
    */
   const getMemberInfo = async () => {
     const { data } = await get_member_info();
@@ -54,6 +60,15 @@ function LoginView() {
     }
   };
 
+  /**
+   *
+   */
+  const getOrgnizeInfo = async () => {
+    const { data } = await get_organize_info();
+    if (data) {
+      dispath(setOrgnizeInfo(JSON.stringify(data)));
+    }
+  };
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };

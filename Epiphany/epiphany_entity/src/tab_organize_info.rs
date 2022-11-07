@@ -10,7 +10,7 @@ pub struct Model {
     pub id: i64,
     pub organize_id:i64,
     pub member_id:i64,
-    pub name: Option<String>,
+    pub name: String,
     pub phone: Option<String>,
     pub address: Option<String>,
     pub business_license_id: Option<String>,

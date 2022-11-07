@@ -1,6 +1,5 @@
 import {
-  DesktopOutlined,
-  FileOutlined,
+  AppstoreOutlined,
   PieChartOutlined,
   TeamOutlined,
   UserOutlined,
@@ -28,48 +27,19 @@ function getItem(
 
 const items: MenuItem[] = [
   {
-    label: "Dashboard",
-    key: "/index/dashboard",
-    icon: <PieChartOutlined />,
-  },
-  {
-    label: "Category",
-    key: "Category",
-    icon: <UserOutlined />,
+    label: "应用分发",
+    key: "distribution",
+    icon: <AppstoreOutlined />,
     children: [
       {
-        label: "Game",
-        key: "/index/category/games",
+        label: "游戏",
+        key: "/workbench/distribut/games",
       },
       {
-        label: "Apps",
-        key: "/index/category/apps",
+        label: "应用",
+        key: "/workbench/distribut/apps",
       },
     ],
-  },
-  {
-    label: "Users",
-    key: "Users",
-    icon: <TeamOutlined />,
-    children: [
-      {
-        label: "Adaminer",
-        key: "/index/users/adminer",
-      },
-      {
-        label: "Organize",
-        key: "/index/users/organize",
-      },
-      {
-        label: "Members",
-        key: "/index/users/members",
-      },
-    ],
-  },
-  {
-    label: "Software",
-    key: "/index/software",
-    icon: <PieChartOutlined />,
   },
 ];
 
@@ -83,8 +53,8 @@ function ComponentLayout() {
 
   return (
     <Menu
-      theme="dark"
-      defaultSelectedKeys={["/index/dashboard"]}
+      theme="light"
+      defaultSelectedKeys={["/workbench/distribut/apps"]}
       mode="inline"
       items={items}
       onClick={menuClick}

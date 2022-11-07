@@ -17,7 +17,9 @@ pub async fn create_organize(
     let conn = APP_CONTEXT.get::<DatabaseConnection>();
     //
     let haved = tab_organize_info::Entity::find()
-        .filter(tab_organize_info::Column::MemberId.eq(member_id.clone()))
+        .filter(tab_organize_info::Column::Name.eq(payload.name.clone()))
+        .filter(tab_organize_info::Column::MemberId.eq(member_id))
+        .filter(tab_organize_info::Column::BusinessLicenseId.eq(payload.business_license_id.clone()))
         .all(conn)
         .await;
     //
@@ -26,7 +28,7 @@ pub async fn create_organize(
     }
     //
     if !haved.unwrap().is_empty() {
-        return Result::Err(Some(String::from("has been registed")));
+        return Result::Err(Some(String::from("name or id has been registed")));
     }
     payload.member_id = member_id;
     //
@@ -46,11 +48,11 @@ pub async fn create_organize(
 /**
  * 
  */
-pub async fn get_organize_info(id: i64) -> Result<Vec<tab_organize_info::Model>, Option<String>> {
+pub async fn get_organize_info(id: i64) -> Result<Option<tab_organize_info::Model>, Option<String>> {
     let conn = APP_CONTEXT.get::<DatabaseConnection>();
     let db_result = tab_organize_info::Entity::find()
         .filter(tab_organize_info::Column::MemberId.eq(id))
-        .all(conn)
+        .one(conn)
         .await;
 
     match db_result {

@@ -5,7 +5,7 @@ import { useLottie } from "lottie-react";
 import "@/views/orgnizeList/index.scss";
 import { useEffect, useState } from "react";
 import { setToken, setMemberInfo } from "@/store/modules/global/action";
-import { get_orgnize_list } from "@/api/orgnize/index";
+import { get_organize_info } from "@/api/orgnize/index";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { OrgnizeInfo } from "@/models/index";
@@ -26,7 +26,7 @@ const columns: ColumnsType<OrgnizeInfo> = [
     key: "organize_type",
     width: "20%",
     render: (_, record) => {
-      return <TypeColmun  {...record} />
+      return <TypeColmun {...record} />;
     },
   },
   {
@@ -41,7 +41,7 @@ const columns: ColumnsType<OrgnizeInfo> = [
     key: "organize_id",
     width: "25%",
     render: (_, record) => {
-      return <StatusColumn  {...record} />
+      return <StatusColumn {...record} />;
     },
   },
   {
@@ -50,12 +50,15 @@ const columns: ColumnsType<OrgnizeInfo> = [
     key: "organize_id",
     width: "10%",
     render: (_, record) => {
-      return <ActionColmun {...record} />
+      return <ActionColmun {...record} />;
     },
-  }
+  },
 ];
 
 function OrgnizeListView() {
+  //
+  const [loading, setLoading] = useState<boolean>(false);
+  //
   const [orgnizeList, setOrgnizeList] = useState<OrgnizeInfo[]>([]);
   //
   const navigate = useNavigate();
@@ -64,19 +67,23 @@ function OrgnizeListView() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await get_orgnize_list();
+      const { data } = await get_organize_info();
       if (data) {
-        setOrgnizeList(data);
+        // setOrgnizeList(data);
       }
     };
     fetchData();
   }, []);
   //
-  const [loading, setLoading] = useState<boolean>(false);
+  const create_orgnize_click = () => {
+    navigate("/create_orgnize");
+  };
 
   return (
     <div className="body-container">
-      <div className="title-container">我的组织</div>
+      <div className="title-container" onClick={create_orgnize_click}>
+        添加组织
+      </div>
       <Table
         rowKey={(record) => record.organize_id}
         bordered
