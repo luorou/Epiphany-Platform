@@ -2,8 +2,7 @@ use epiphany_entity::tab_software_category;
 use sea_orm::{ColumnTrait, DatabaseConnection, EntityTrait, ModelTrait, QueryFilter};
 
 use crate::{
-    domain::{resp::software_category_resp::AppCategotyResp,
-    },
+    domain::resp::software_category_resp::AppCategotyResp,
     APP_CONTEXT,
 };
 /**

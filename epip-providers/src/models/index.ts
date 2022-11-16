@@ -26,3 +26,11 @@ export interface OrgnizeInfo {
       logo: string;
       business_license_id_file: string;
 }
+
+export interface SoftwareInfo {
+      app_name: string;
+      app_logo: string;
+      app_platform: number;
+      app_pack_name: SVGStringList;
+      privacy_protocal_url: string;
+}

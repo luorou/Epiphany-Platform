@@ -11,7 +11,7 @@ pub struct CreateAppInfoReq {
     pub app_logo: String,
     pub app_platform: i32,
     pub app_pack_name: String,
-    pub company_id: i64,
+    pub orgnize_id: i64,
     pub privacy_protocal_url: String,
 }
 
@@ -23,7 +23,7 @@ impl CreateAppInfoReq {
             app_logo:Set(self.app_logo),
             app_platform:Set(self.app_platform),
             app_pack_name:Set(self.app_pack_name),
-            company_id:Set(self.company_id),
+            orgnize_id:Set(self.orgnize_id),
             privacy_protocal_url:Set(self.privacy_protocal_url),
             status:Set(0),
             create_time: Set(Local::now().timestamp_millis()),

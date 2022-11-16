@@ -7,12 +7,12 @@ use sea_orm::entity::prelude::*;
 pub struct Model {
     #[sea_orm(primary_key, auto_increment = false)]
     pub id: i64,
+    pub orgnize_id: i64,
     pub software_id: i64,
     pub app_name: String,
     pub app_logo: String,
     pub app_platform: i32,
     pub app_pack_name: String,
-    pub company_id: i64,
     pub privacy_protocal_url: String,
     pub create_time: i64,
     pub delete_time: Option<i64>,

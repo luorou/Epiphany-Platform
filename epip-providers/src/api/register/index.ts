@@ -17,7 +17,6 @@ export interface RegisterResult {
       organize_status: number;
 }
 
-
 export const registerApi = (params: RegisterReq) => {
 	return http.post<RegisterResult>(`/provider/register/register_by_email`, params);
 };

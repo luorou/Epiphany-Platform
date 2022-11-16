@@ -60,6 +60,7 @@ function DistributAppsView() {
           shape="round"
           style={{ width: 120 }}
           className="create-button"
+          
         >
           创建应用
         </Button>
