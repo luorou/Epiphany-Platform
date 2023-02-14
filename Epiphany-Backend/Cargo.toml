@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+    "epip-member",
+    "epip-soft",
+    "epip-comments",
+]
