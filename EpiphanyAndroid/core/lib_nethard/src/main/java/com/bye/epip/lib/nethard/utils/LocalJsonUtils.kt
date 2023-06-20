@@ -36,7 +36,6 @@ object LocalJsonUtils {
         return try {
             Gson().fromJson(json, classOfT)
         } catch (e: Exception) {
-//            Log.e("TAG----", "${e.message}")
             null
         }
 

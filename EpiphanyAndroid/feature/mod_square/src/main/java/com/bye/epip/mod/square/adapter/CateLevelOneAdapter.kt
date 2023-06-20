@@ -24,20 +24,20 @@ class CateLevelOneAdapter():RecyclerView.Adapter<CateLevelOneAdapter.ViewHolder>
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = mDataResource[position]
-        holder.B.tvCateName.text = item.name
+        holder.binding.tvCateName.text = item.name
         val cateAdapter = CateLeveltwoAdapter()
         if (!item.child.isNullOrEmpty()) {
             cateAdapter.setDataS(item.child)
         }
-        holder.B.rv.layoutManager = GridLayoutManager(holder.B.rv.context,3)
-        holder.B.rv.adapter = cateAdapter
+        holder.binding.rv.layoutManager = GridLayoutManager(holder.binding.rv.context,3)
+        holder.binding.rv.adapter = cateAdapter
     }
 
     override fun getItemCount(): Int {
         return mDataResource.size
     }
 
-    class ViewHolder(val B: SquareCateLevelOneAdapterBinding) :RecyclerView.ViewHolder(B.root){}
+    class ViewHolder(val binding: SquareCateLevelOneAdapterBinding) :RecyclerView.ViewHolder(binding.root){}
 
 
 }
