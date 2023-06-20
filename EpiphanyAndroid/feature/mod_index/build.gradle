@@ -28,6 +28,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -35,7 +38,24 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
-
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.2.0'
+    //
+    implementation project(':core:global')
+    implementation project(':core:routers')
+    implementation project(':core:data')
+    implementation project(':core:domain')
+    implementation project(':core:lib_localstore')
+    implementation project(':core:lib_resource')
+    implementation project(':core:lib_widget')
+    implementation project(':core:lib_nethard')
+    implementation project(':core:lib_mvi')
+    //
+    implementation project(':feature:mod_apps')
+    implementation project(':feature:mod_games')
+    implementation project(':feature:mod_ranks')
+    implementation project(':feature:mod_square')
+    implementation project(':feature:mod_ucenter')
+    //
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

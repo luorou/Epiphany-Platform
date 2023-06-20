@@ -45,7 +45,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
-    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.2.0'
     //
     implementation "com.google.dagger:hilt-android:2.44.2"
     kapt "com.google.dagger:hilt-compiler:2.44.2"
@@ -54,7 +53,6 @@ dependencies {
     implementation project(':core:routers')
     implementation project(':core:lib_localstore')
     implementation project(':core:lib_resource')
-    implementation project(':core:lib_mvi')
     implementation project(':core:lib_nethard')
     implementation project(':feature:mod_index')
     implementation project(':feature:mod_square')

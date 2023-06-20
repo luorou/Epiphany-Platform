@@ -34,6 +34,14 @@ android {
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.10.1'
+
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.11.0"))
+    api("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:1.0.0'
+
     api 'com.google.code.gson:gson:2.10.1'
     implementation project(':core:global')
     implementation "com.google.dagger:hilt-android:2.44.2"

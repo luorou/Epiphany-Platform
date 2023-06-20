@@ -3,7 +3,7 @@ package com.bye.epip.mod.square.vm
 import androidx.lifecycle.viewModelScope
 import com.blankj.utilcode.util.Utils
 import com.bye.epip.lib.mvi.XViewModel
-import com.bye.epip.lib.nethard.beans.ResponseX
+import com.bye.epip.lib.nethard.resp.RespWrapper
 import com.bye.epip.lib.nethard.utils.LocalJsonUtils
 import com.bye.epip.mod.square.beans.CategoryBean
 import com.bye.epip.mod.square.effect.CategoryEffect
@@ -35,8 +35,8 @@ class CategoryVM : XViewModel<CategoryState, CategoryEffect, CategoryEvent>() {
     private fun fetchGameCate() {
         viewModelScope.launch {
             val res = LocalJsonUtils.getLocalJson(Utils.getApp(),"mock/cate_games.json")
-            val type = object : TypeToken<ResponseX<ArrayList<CategoryBean>?>>() {}.type
-            val result  = Gson().fromJson<ResponseX<ArrayList<CategoryBean>?>>(res, type)
+            val type = object : TypeToken<RespWrapper<ArrayList<CategoryBean>?>>() {}.type
+            val result  = Gson().fromJson<RespWrapper<ArrayList<CategoryBean>?>>(res, type)
             //
             if (!result?.data.isNullOrEmpty()) {
                 uiEffect = CategoryEffect.ReplyGamesCates(result.data!!)
@@ -50,8 +50,8 @@ class CategoryVM : XViewModel<CategoryState, CategoryEffect, CategoryEvent>() {
     private fun fetchAppsCate() {
         viewModelScope.launch {
             val res = LocalJsonUtils.getLocalJson(Utils.getApp(),"mock/cate_apps.json")
-            val type = object : TypeToken<ResponseX<ArrayList<CategoryBean>?>>() {}.type
-            val result  = Gson().fromJson<ResponseX<ArrayList<CategoryBean>?>>(res, type)
+            val type = object : TypeToken<RespWrapper<ArrayList<CategoryBean>?>>() {}.type
+            val result  = Gson().fromJson<RespWrapper<ArrayList<CategoryBean>?>>(res, type)
             //
             if (!result?.data.isNullOrEmpty()) {
                 uiEffect = CategoryEffect.ReplyAppsCates(result.data!!)
