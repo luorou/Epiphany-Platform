@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.didi.drouter'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -37,23 +39,27 @@ android {
 }
 
 dependencies {
-
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.2.0'
-    implementation 'com.airbnb.android:lottie:5.2.0'
-    implementation project(':lib_resource')
-    implementation project(':lib_mvi')
-    implementation project(':lib_under')
-    implementation project(':lib_nethard')
-    implementation project(':mod_square')
-    implementation project(':mod_apps')
-    implementation project(':mod_ranks')
-    implementation project(':mod_games')
-    implementation project(':mod_ucenter')
-    implementation project(':lib_middle')
+    //
+    implementation "com.google.dagger:hilt-android:2.44.2"
+    kapt "com.google.dagger:hilt-compiler:2.44.2"
+    //
+    implementation project(':core:global')
+    implementation project(':core:routers')
+    implementation project(':core:lib_localstore')
+    implementation project(':core:lib_resource')
+    implementation project(':core:lib_mvi')
+    implementation project(':core:lib_nethard')
+    implementation project(':feature:mod_index')
+    implementation project(':feature:mod_square')
+    implementation project(':feature:mod_apps')
+    implementation project(':feature:mod_ranks')
+    implementation project(':feature:mod_games')
+    implementation project(':feature:mod_ucenter')
 }
